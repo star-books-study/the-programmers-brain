@@ -9,31 +9,32 @@
 - 첫 번째 코드는 APL이고, 두 번쨰는 자바, 세 번째는 베이직이다.
 - 코드를 읽을 때 어떤 종류의 지식을 사용하고, 그 지식은 어떻게 다른가?
 
-```apl
-// 1.1 APL에서의 이진수 표현
-2 2 2 2 2 T n
-```
+- APL에서의 이진수 표현
+  ```apl
+  
+  2 2 2 2 2 T n
+  ```
 
-```java
-// 1.2 자바에서의 이진수 표현
-public class BinaryCalculator {
-  public static void main(Integer n) {
-    System.out.println(Integer.toBinaryString(n));
+- 자바에서의 이진수 표현
+  ```java
+  public class BinaryCalculator {
+    public static void main(Integer n) {
+      System.out.println(Integer.toBinaryString(n));
+    }
   }
-}
-```
+  ```
 
-```basic
-// 1.3 베이직에서의 이진수 표현
-LET N2 = ABS(INT(N))
-LET B$ = ""
-FOR N1 = N2 TO 0 STEP 0
-  LET N2 = INT(N1 / 2)
-  LET B$ = STR$(N1 - N2 * 2) + B$
-  LET N1 = N2
-NEXT N1
-PRINT B$
-```
+- 베이직에서의 이진수 표현
+  ```basic
+  LET N2 = ABS(INT(N))
+  LET B$ = ""
+  FOR N1 = N2 TO 0 STEP 0
+    LET N2 = INT(N1 / 2)
+    LET B$ = STR$(N1 - N2 * 2) + B$
+    LET N1 = N2
+  NEXT N1
+  PRINT B$
+  ```
 
 ### 1.1.1 혼란의 첫 번째 유형 : 지식의 부족
 - 첫 번째 예제 코드를 보고 혼란스러운 이유는 `T`가 의미하는 바를 모르기 때문이다.
@@ -58,3 +59,26 @@ PRINT B$
 
 
 ## 1.2 코딩에 영향을 주는 인지 과정
+
+우리가 여러 종류의 혼란을 겪을 때 다음과 같은 서로 다른 종류의 인지 과정이 연관된다.
+- **지식의 부족** = `장기 기억 공간(long-term memory, LTM)`의 문제
+- **정보의 부족** = `단기 기억 공간(short-term memory, STM)`의 문제
+- **처리 능력의 부족** = `작업 기억 공간(working memory)`의 문제
+
+
+### 1.2.1 LTM과 프로그래밍
+- LTM은 프로그래밍과 관련해서 여러 가지 다른 종류의 정보를 저장한다.
+  - 예를 들어 어떤 기술을 성공적으로 적용한 순간, 자바 언어에서 키워드의 의미나 maxint의 값이 2147483647이라는 사실, 혹은 영어 단어의 의미 등이다.
+- LTM은 오랜 시간 동안 저장한다는 점에서 **컴퓨터의 하드 드라이브와 비슷**하다.
+
+#### APL 프로그램 : LTM
+- APL 예제 코드를 통해 **언어의 문법**에 대한 지식도 중요하다는 사실을 알 수 있다.
+- `T`가 어떤 수의 값을 다른 진법의 수로 변환해주는 이항 부호화(dyadic encode) 함수라는 것을 알면 코드 분석은 간단해진다.
+
+### 1.2.2 STM과 프로그래밍
+- STM은 들어오는 정보를 잠시 보관하기 위해 사용된다.
+- STM은 크기에 제한이 있는데, 이 크기에 대한 추정치는 학자마다 다르지만 STM이 기억할 수 있는 항목의 최대치가 12개를 넘지 않는다는 점에는 대부분의 학자가 동의한다.
+
+#### 자바 프로그램 : STM
+- STM은 `n`이 정수형 숫자라는 사실을 일정 기관 보관한다.
+- 두 번째 라인에 이르렀을 때는 `toBinaryString()`이 반환하는 결과가 무엇인지 알게 된다.
