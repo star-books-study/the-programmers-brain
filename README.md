@@ -1,5 +1,6 @@
 # 프로그래머의 뇌
-<img src="https://image.yes24.com/goods/105911017/XL" width="300">
+<img src="https://github.com/user-attachments/assets/fbe1300c-2372-4f06-a825-e24b650a1dd9" width="300">
+
 
 ## 📚 스터디 규칙
 
